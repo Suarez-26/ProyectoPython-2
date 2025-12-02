@@ -6,7 +6,7 @@ def registrar_gasto():
     gastos = cargar_datos()
 
     cantidad = float(input("Ingrese el monto: "))
-    categoria = input("Categoría (comida, transporte, etc): ").capitalize()
+    categoria = input("Categoría (comida, transporte, etc): ")
     descripcion = input("Descripción (opcional): ")
     fecha = (input(f"Ingrese la fecha del gasto del {categoria}"))
 
@@ -23,6 +23,10 @@ def registrar_gasto():
     print("\n✔ Gasto registrado con éxito.\n")
 
 # -------------- lista de gastos -------------
+# gastos = []
+# categoria = []
+# fecha_inicio = []
+# fecha_fin = []
 
 def MostrarTodosGastos(gastos):
     print("\n=== TODOS LOS GASTOS ===")

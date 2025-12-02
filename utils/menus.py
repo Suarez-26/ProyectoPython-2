@@ -30,7 +30,7 @@ Seleccione una opción:
             print("¡Hasta pronto!")
             break
         else:
-            print("❌ OPCIÓN NO VÁLIDA, INTENTE NUEVAMENTE\n")
+            print(" OPCIÓN NO VÁLIDA, INTENTE NUEVAMENTE\n")
 
 #-----------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ Ingrese 'S' para insertar o 'C' para cancelar.
     elif opt == 'c':
         print(">> Volviendo al menú principal...\n")
     else:
-        print("❌ Opción inválida. Regresando al menú principal...\n")
+        print(" Opción inválida. Regresando al menú principal...\n")
 
 # --------------------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ Seleccione una opción para filtrar los gastos:
             print(">> Regresando al menú principal...\n")
             break
         else:
-            print("❌ LA OPCION NO ES VALIDA\n")
+            print(" LA OPCION NO ES VALIDA\n")
 
     
 # ------------------------------------------------------------------------------------------------
