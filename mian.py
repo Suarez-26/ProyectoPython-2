@@ -1,10 +1,8 @@
 from utils.menus import *
+from data.databases import *
 
-def Registrar_Gasto():
-    cantidad = float(input("Ingrese el monto :"))
-    categoria = input("Ingrese la categoria :")
-    descripcion = input("Ingrese una breve descripcion (opcional) :")
-    
-    
 
-Menu_Principal()
+
+
+if __name__ == "__main__":
+    Menu_Principal()

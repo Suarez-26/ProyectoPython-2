@@ -1,0 +1,25 @@
+[
+    {
+        "cantidad": 5000.0,
+        "categoria": "Comida ",
+        "descripcion": "Tenia hambre"
+    },
+    {
+        "cantidad": 5000.0,
+        "categoria": "Transporte ",
+        "descripcion": "Para ir a campuslands",
+        "fecha": "2/12/2025"
+    },
+    {
+        "cantidad": 3000.0,
+        "categoria": "Transporte ",
+        "descripcion": "para venir a campuslands ",
+        "fecha": "2/12/2025"
+    },
+    {
+        "cantidad": 11.0,
+        "categoria": "Aa",
+        "descripcion": "a",
+        "fecha": "aaa"
+    }
+]
