@@ -1,53 +1,28 @@
-# archivos/manejo_archivos.py
-
+# databases.py
 import json
+import os
 
-# Archivo donde se guardan los gastos
-archivo_gastos = "gastos.json"
+def guardar_datos(gastos):
+    with open("gastos.json", "w") as archivo:
+        json.dump(gastos, archivo, indent=4)
 
-# Lista global de gastos
-gastos = []
-
-# Funcion para cargar todos los datos 
+# Cargar  data en JSON 
 def cargar_datos():
-    """Carga los gastos desde el archivo JSON"""
-    global gastos
-    try:
-        with open(archivo_gastos, 'r') as f:
-            gastos = json.load(f)
-        print(f"Datos cargados. {len(gastos)} gastos encontrados.")
-    except FileNotFoundError:
-        print("No se encontró el archivo de gastos. Empezando con una lista vacía.")
-        gastos = []
-
-# Funcion para guardar todos los datos 
-
-def guardar_datos():
-    """Guarda los gastos en el archivo JSON"""
-    with open(archivo_gastos, 'w') as f:
-        json.dump(gastos, f, indent=4)
-    print("Datos guardados correctamente.")
-
-
-# Funcion para guardar loa Reportes en JSON
-
+    if os.path.exists("gastos.json"):
+        with open("gastos.json", "r") as archivo:
+            return json.load(archivo)
+    return []
+# guardar reporte json 
 def guardar_reporte_json(nombre_archivo, reporte):
-    """Guarda el reporte en un archivo JSON"""
-    with open(nombre_archivo, 'w') as f:
-        json.dump(reporte, f, indent=4)
-    print(f"Reporte guardado como {nombre_archivo}.")
+    with open(nombre_archivo, "w") as archivo:
+        json.dump(reporte, archivo, indent=4)
+    print(f"Reporte guardado en {nombre_archivo}")
 
-# Funcion para guardar los Reportes en archivois TXT
+# guatardar reporte txt
 def guardar_reporte_txt(nombre_archivo, gastos_filtrados, total, tipo_reporte):
-    """Guarda el reporte en un archivo TXT"""
-    with open(nombre_archivo, 'w') as f:
-        f.write(f"--- Reporte {tipo_reporte.capitalize()} ---\n")
-        f.write(f"Total de gastos: ${total:.2f}\n")
-        f.write("-" * 60 + "\n")
-        
+    with open(nombre_archivo, "w") as archivo:
+        archivo.write(f"--- Reporte {tipo_reporte.capitalize()} ---\n")
+        archivo.write(f"Total: ${total:.2f}\n")
         for gasto in gastos_filtrados:
-            f.write(f"ID: {gasto['id']}, Fecha: {gasto['fecha']}, "
-                    f"Categoría: {gasto['categoria']}, Monto: ${gasto['cantidad']:.2f}, "
-                    f"Descripción: {gasto['descripcion']}\n")
-            f.write("-" * 60 + "\n")
-    print(f"Reporte guardado como {nombre_archivo}.")
+            archivo.write(f"ID: {gasto['id']}, Fecha: {gasto['fecha']}, Categoría: {gasto['categoria']}, Monto: ${gasto['cantidad']:.2f}, Descripción: {gasto['descripcion']}\n")
+    print(f"Reporte guardado en {nombre_archivo}")

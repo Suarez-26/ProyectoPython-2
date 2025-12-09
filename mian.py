@@ -1,33 +1,28 @@
-import utils.gastos as gastos
-import data.databases as archivos
-
-def mostrar_menu():
-    print("------ BIENVENIDO AL GESTOR DE GASTOS ------")
-    print("\n1. Registrar gasto")
-    print("2. Ver todos los gastos")
-    print("3. Generar reportes")
-    print("4. Salir")
+# main.py
+from utils.gastos import *
+from utils.reportes import *
 
 def main():
-    archivos.cargar_datos()
-
-    while True:
-        mostrar_menu()
-
-        opcion = input("Selecciona una opción (1-3): ")
-
-        if opcion == "1":
-            gastos.registrar_gasto()
-        elif opcion == "2":
-            gastos.Menu_Listar_gastos()
-        elif opcion == "3":
-            gastos.generar_reporte()
-        elif opcion == "5":
-            print("¡Gracias por usar el simulador!")
-            archivos.guardar_datos()
-            break
-        else:
-            print("Opción inválida. Intenta de nuevo.")
-
+        while True:
+            print("\n==== GESTIÓN DE GASTOS ====")
+            print("1. Registrar Gasto")
+            print("2. Listar Gastos")
+            print("3. Generar Reporte")
+            print("4. Salir")
+            
+            opcion = input("Selecciona una opción (1-4): ")
+            
+            if opcion == "1":
+                registrar_gasto()
+            elif opcion == "2":
+                menu_listar_gastos()
+            elif opcion == "3":
+                generar_reporte()
+            elif opcion == "4":
+                print("¡Adiós!")
+                break
+            else:
+                print("Opción no válida.")
+            
 if __name__ == "__main__":
     main()
