@@ -1,4 +1,5 @@
 # main.py
+# se agrego el examen 
 from utils.gastos import *
 from utils.reportes import *
 from utils.proyeccion import *
@@ -33,4 +34,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Algo que agregar
+# Algo que agregar 
+# otra cosa 
+
