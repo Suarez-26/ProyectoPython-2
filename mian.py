@@ -1,5 +1,4 @@
 # main.py
-# se agrego el examen 
 from utils.gastos import *
 from utils.reportes import *
 from utils.proyeccion import *
