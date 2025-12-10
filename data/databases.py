@@ -14,6 +14,11 @@ def cargar_datos():
     return []
 # guardar reporte json 
 def guardar_reporte_json(nombre_archivo, reporte):
+    # Verificar si la carpeta 'reports' existe, y si no, crearla
+    if not os.path.exists("reports"):
+        os.makedirs("reports")
+    
+    # Guardar el reporte en el archivo JSON
     with open(nombre_archivo, "w") as archivo:
         json.dump(reporte, archivo, indent=4)
     print(f"Reporte guardado en {nombre_archivo}")
